@@ -53,11 +53,11 @@ local frame = vgui.Create("DFrame")
 end
 usermessage.Hook("test_suitcase_clientsidemenu", suitcase_menu)
 
-
+-- took the the code below from the gun dealer lab thing
 function ENT:Draw()
     self:DrawModel()
 
-		local Pos = self:GetPos()
+            local Pos = self:GetPos()
 	    local Ang = self:GetAngles()
 		
 		Ang:RotateAroundAxis(Ang:Forward(), 90)
