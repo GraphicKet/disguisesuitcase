@@ -4,13 +4,29 @@
 
 include('shared.lua')
 
+surface.CreateFont( "shit", {
+	font = "Arial",
+	size = 30,
+	weight = 1000,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = true,
+	additive = false,
+	outline = false,
+})
 
 function suitcase_menu()
     	
 
 local frame = vgui.Create("DFrame")
    frame:SetPos( ScrW() / 2 - 345, ScrH() / 2 - 150 )
-   frame:SetSize(750, 300)
+   frame:SetSize(510, 300)
    frame:SetTitle(" ")
    frame:SetVisible(true)
    frame:ShowCloseButton(true)
@@ -18,19 +34,17 @@ local frame = vgui.Create("DFrame")
    frame:MakePopup()
    frame.Paint = function()
       draw.RoundedBox(0, 0, 0, frame:GetWide(), frame:GetTall(), Color(70, 120, 70))
-      draw.RoundedBox(0, 0, 0, frame:GetWide(), 25, Color(80, 130, 80))
-      draw.SimpleText("Disguise Menu", "HUDNumber5", frame:GetWide() / 2 - 25, 0, color_white, TEXT_ALIGN_CENTER)
-      draw.SimpleText("Created by", "HUDNumber5", frame:GetWide() / 2 + 250, 25, color_white, TEXT_ALIGN_CENTER)
-      draw.SimpleText("Icejjfish", "HUDNumber5", frame:GetWide() / 2 + 250, 50, Color(50, 50, 70), TEXT_ALIGN_CENTER)
+      draw.RoundedBox(0, 0, 0, frame:GetWide(), 24, Color(80, 130, 80))
+      draw.SimpleText("Disguise Menu", "shit", frame:GetWide() / 2 - 10, 0, color_white, TEXT_ALIGN_CENTER)
   end
    
    local scrolldbar = vgui.Create("DScrollPanel", frame)
-    scrolldbar:SetSize(515, 200)
-	scrolldbar:SetPos(10, 20)
+    scrolldbar:SetSize(500, frame:GetTall() - 27)
+	scrolldbar:SetPos(10, 27)
 	 
 	
 	local modellist = vgui.Create("DIconLayout", scrolldbar)
-	modellist:SetSize(500, 200)
+	modellist:SetSize(500, 205)
 	modellist:SetPos(5, 10)
 	modellist:SetSpaceY(5)
 	modellist:SetSpaceX(5)
@@ -53,11 +67,11 @@ local frame = vgui.Create("DFrame")
 end
 usermessage.Hook("test_suitcase_clientsidemenu", suitcase_menu)
 
--- took the the code below from the gun dealer lab thing
+
 function ENT:Draw()
     self:DrawModel()
 
-            local Pos = self:GetPos()
+		local Pos = self:GetPos()
 	    local Ang = self:GetAngles()
 		
 		Ang:RotateAroundAxis(Ang:Forward(), 90)
