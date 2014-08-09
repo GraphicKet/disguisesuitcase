@@ -80,6 +80,6 @@ function ENT:Draw()
 	    TextAng:RotateAroundAxis(TextAng:Right(), CurTime() * -180)
 		
 		cam.Start3D2D(Pos + Ang:Right() * -30, TextAng, 0.35)
-			draw.SimpleTextOutlined( 'Disguise Suitcase', "HUDNumber5", 0, 0, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP, 1, Color(0, 0, 0, 255))
+			draw.SimpleTextOutlined( 'Disguise Suitcase', "shit", 0, 0, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP, 1, Color(0, 0, 0, 255))
 		cam.End3D2D()	
 end
