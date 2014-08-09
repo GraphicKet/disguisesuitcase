@@ -23,7 +23,7 @@ function ENT:Initialize()
 	local phys = self:GetPhysicsObject()
 	if phys:IsValid() then phys:Wake() end
 	
-	ServerLog("It works... I guess                                                                      ")
+	ServerLog("It works... I guess" .. "\n")
 
 end
 
