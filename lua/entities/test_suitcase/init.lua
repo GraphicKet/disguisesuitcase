@@ -51,8 +51,8 @@ function comeupwithabetterway(length, caller)
 	   caller.OldModel = caller:GetModel()
 	   caller:SetModel(vmodel)
 	   caller:PrintMessage(HUD_PRINTTALK, "Your playermodel have changed!" )
-	   caller:PrintMessage(HUD_PRINTTALK, "You'll get your old model after" .. SUITCASE.changetime .. "seconds")
-	   timer.Simple(SUITCASE.changetime, function() if (IsValid(caller) && caller.OldModel) then 
+	   caller:PrintMessage(HUD_PRINTTALK, "You'll get your old model after" .. SUITCASE_changetime .. "seconds")
+	   timer.Simple(SUITCASE_changetime, function() if (IsValid(caller) && caller.OldModel) then 
 	       caller:SetModel(caller.OldModel) 
 	        caller:PrintMessage(HUD_PRINTTALK, "You've now been changed back to your old model.") end 
 	   end)
