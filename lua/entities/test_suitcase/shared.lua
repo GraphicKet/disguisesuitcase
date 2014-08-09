@@ -1,6 +1,6 @@
 -------------- Add Models here 
 
-SUITCASE.changetime = 100
+SUITCASE_changetime = 100
 
 suitcase_models = {
     ------------------------------ Add models  below here-------------------------------------
