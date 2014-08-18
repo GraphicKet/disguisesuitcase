@@ -22,7 +22,7 @@ surface.CreateFont( "shit", {
 })
 
 function suitcase_menu()
-    	
+ 	
 
 local frame = vgui.Create("DFrame")
    frame:SetSize(510, 300)
@@ -42,14 +42,39 @@ local frame = vgui.Create("DFrame")
     scrolldbar:SetSize(500, frame:GetTall() - 27)
 	scrolldbar:SetPos(10, 27)
 	 
+ local menueditor = vgui.Create( "DImageButton", frame )
+    menueditor:SetPos( 10, 5 )                               
+    menueditor:SetSize( 16, 16 )                           
+    menueditor:SetImage( "icon16/book_edit.png" )       
+    menueditor:SizeToContents()                          
+    menueditor.DoClick = function()
+	   
+  local editorframe = vgui.Create("DFrame")  
+            editorframe:SetSize(510, 300)
+            editorframe:SetTitle("Menu Editor")
+            editorframe:SetVisible(true)
+            editorframe:ShowCloseButton(true)
+            editorframe:SetDraggable(true)
+            editorframe:MakePopup()
+            editorframe:Center()   
+   
+   local modelpathright = vgui.Create( "DTextEntry", editorframe )
+           modelpathright:SetPos( 25, 50 )
+           modelpathright:SetSize( 200, 25 )
+           modelpathright:SetText("Model path")
+           modelpathright.OnEnter = function( self )
+	            table.insert(suitcase_models, self:GetValue() )	                  			
+				file.Write("fuckingfilelibrary.txt", util.TableToJSON(suitcase_models))
+end
 	
+end
 	local modellist = vgui.Create("DIconLayout", scrolldbar)
 	modellist:SetSize(500, 205)
 	modellist:SetPos(5, 10)
 	modellist:SetSpaceY(5)
 	modellist:SetSpaceX(5)
 	
-	     for k, v in pairs(suitcase_models) do			
+	     for k, v in pairs(shit_i_guess) do			
 	        
 		
 		local test = modellist:Add("DModelPanel", fail)			    			
@@ -66,7 +91,6 @@ local frame = vgui.Create("DFrame")
 	end			   	
 end
 usermessage.Hook("test_suitcase_clientsidemenu", suitcase_menu)
-
 
 function ENT:Draw()
     self:DrawModel()
