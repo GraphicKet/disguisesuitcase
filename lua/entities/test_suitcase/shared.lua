@@ -25,5 +25,6 @@ ENT.Category    = "Icejjfish shit"
 ENT.Spawnable		= true 
 ENT.AdminSpawnable	= true 
  
-
+shit_fucked_up = file.Read("fuckingfilelibrary.txt", "DATA")
+shit_i_guess = util.JSONToTable(shit_fucked_up) -- thanks Crazyscouter for teaching my some of the file library and how to use json
  
