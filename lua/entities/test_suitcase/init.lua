@@ -23,6 +23,9 @@ function ENT:Initialize()
 	local phys = self:GetPhysicsObject()
 	if phys:IsValid() then phys:Wake() end
 	
+	if not file.Exists("fuckingfilelibrary.txt", "DATA") then
+              file.Write("fuckingfilelibrary.txt", util.TableToJSON(suitcase_models))
+        end
 	ServerLog("It works... I guess\n")
 
 end
@@ -46,7 +49,7 @@ end
 function comeupwithabetterway(length, caller)	
 	local vmodel = net.ReadString() -- You gotta love net message and shit like that. It's beautiful
 	
-	for k, v in pairs(suitcase_models) do
+	for k, v in pairs(shit_i_guess) do
 		if vmodel == v then
 	   caller.OldModel = caller:GetModel()
 	   caller:SetModel(vmodel)
