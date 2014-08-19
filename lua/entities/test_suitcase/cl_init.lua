@@ -90,7 +90,7 @@ end
 		end
 	end			   	
 end
-usermessage.Hook("test_suitcase_clientsidemenu", suitcase_menu)
+net.Receive("test_suitcase_clientsidemenu", suitcase_menu)
 
 function ENT:Draw()
     self:DrawModel()
