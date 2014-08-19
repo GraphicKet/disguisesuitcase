@@ -8,7 +8,7 @@ include('shared.lua')
 
 
 util.AddNetworkString("IdidIt")
-
+util.AddNetworkString("test_suitcase_clientsidemenu")
 
 function ENT:Initialize()
 	self:SetModel( "models/props_c17/SuitCase001a.mdl" )
