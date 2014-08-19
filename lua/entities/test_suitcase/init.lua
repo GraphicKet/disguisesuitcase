@@ -32,10 +32,10 @@ end
 
 
 
-function ENT:AcceptInput(name, activator, caller, data)
+function ENT:AcceptInput(name, activator)
 	if name == "Use" and IsValid(caller) and caller:IsPlayer() then
-		umsg.Start("test_suitcase_clientsidemenu")
-		umsg.End()
+		net.Start("test_suitcase_clientsidemenu")
+		net.Send(activator)
 	end
 end
 
