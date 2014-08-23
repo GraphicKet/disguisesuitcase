@@ -32,7 +32,7 @@ end
 
 
 
-function ENT:AcceptInput(name, activator)
+function ENT:AcceptInput(name, activator, caller)
 	if name == "Use" and IsValid(caller) and caller:IsPlayer() then
 		net.Start("test_suitcase_clientsidemenu")
 		net.Send(activator)
