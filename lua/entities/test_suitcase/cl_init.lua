@@ -64,7 +64,7 @@ local frame = vgui.Create("DFrame")
            modelpathright:SetText("Model path")
            modelpathright.OnEnter = function( self )
 	            table.insert(suitcase_models, self:GetValue() )	                  			
-				file.Write("fuckingfilelibrary.txt", util.TableToJSON(suitcase_models))
+			
 end
 	
 end
